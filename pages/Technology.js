@@ -6,16 +6,17 @@ import { technology } from "../data.json";
 import image from "../assets/technology/image-launch-vehicle-landscape.jpg";
 function Technology() {
 	const [activeContent, setActiveContent] = useState(technology[0]);
-	const [screenWidth, setScreenWidth] = useState(751);
+	const [screenWidth, setScreenWidth] = useState(0);
 	const [imageUrl, setImageUrl] = useState(activeContent.images.landscape);
 
 	useEffect(() => {
-		window.addEventListener("resize", () => {
-			setScreenWidth(window.innerWidth);
-		});
+		setScreenWidth(window.innerWidth);
 		if (screenWidth > 750) {
 			setImageUrl(activeContent.images.portrait);
 		} else setImageUrl(activeContent.images.landscape);
+		window.addEventListener("resize", () => {
+			setScreenWidth(window.innerWidth);
+		});
 	}, [activeContent, screenWidth]);
 
 	return (

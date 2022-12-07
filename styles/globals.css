@@ -297,12 +297,15 @@ select {
 	display: inline-grid;
 	place-items: center;
 	padding: 0 1.5em;
+	margin: 0;
 	border-radius: 50%;
 	aspect-ratio: 1;
 	background-color: transparent;
 	cursor: pointer;
 	color: hsl(var(--clr-white) / 1);
 	border: 1px solid hsl(var(--clr-white) / 0.5);
+	align-items: center;
+	justify-content: center;
 }
 .small-button:hover,
 .small-button:focus {
@@ -514,20 +517,22 @@ select {
 
 /* Technology */
 .technology {
-	background-position: center center;
-	background: url(../assets/technology/background-technology-desktop.jpg);
+	background-position: center;
+	background-size: cover;
+	background: url(../public/assets/technology/background-technology-desktop.jpg);
 }
 /* @media (min-width: 35em) {
 	.technology {
 		background-position: center center;
 		background-image: url(../public/assets/technology/background-technology-tablet.jpg);
 	}
-}
+} */
 @media (min-width: 45em) {
 	.technology {
-		background-image: url(../public/assets/technology/background-technology-desktop.jpg);
+		background-position: right;
+		background-size: cover;
 	}
-} */
+}
 
 /* --------- */
 /* Layout    */
