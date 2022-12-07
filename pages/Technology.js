@@ -34,7 +34,7 @@ function Technology() {
 				<h1 className="numbered-title">
 					<span aria-hidden="true">03</span>Space Launch 101
 				</h1>
-				<img src={imageUrl} alt="the moon" />
+				<img src={imageUrl} alt="The spaceship" />
 				<div className="flex grid-container--technology-content">
 					<div class="tab-list flex ">
 						<button

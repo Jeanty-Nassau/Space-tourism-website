@@ -86,10 +86,16 @@ p {
 	color: hsl(var(--clr-white));
 	background-color: hsl(var(--clr-dark));
 	line-height: 1.5;
-	min-height: 100vh;
+	height: 100vh;
 	display: grid;
 	grid-template-rows: min-content 1fr;
 	overflow-x: hidden;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: hsl(var(--clr-dark));
 }
 
 /* make images easier to work with */
@@ -294,9 +300,9 @@ select {
 .small-button {
 	position: relative;
 	z-index: 1;
-	display: inline-grid;
+	display: flex;
 	place-items: center;
-	padding: 0 1.5em;
+	padding: 0 1.75em;
 	margin: 0;
 	border-radius: 50%;
 	aspect-ratio: 1;
@@ -315,6 +321,7 @@ select {
 .small-button[aria-selected="true"] {
 	color: black;
 	background-color: hsl(var(--clr-white));
+	border-color: hsl(var(--clr-white));
 }
 
 /* primary-header */
@@ -419,6 +426,9 @@ select {
 	.primary-navigation {
 		margin-block: 2rem;
 	}
+	.small-button {
+		padding: 0 1.5rem;
+	}
 }
 .underline-indicators > * {
 	cursor: pointer;
@@ -473,8 +483,8 @@ select {
 }
 @media (min-width: 35em) {
 	.home {
-		background-position: center center;
 		background-image: url(../public/assets/home/background-home-tablet.jpg);
+		background-position: center center;
 	}
 }
 @media (min-width: 45em) {
@@ -489,8 +499,8 @@ select {
 }
 @media (min-width: 35em) {
 	.destination {
-		background-position: center center;
 		background-image: url(../public/assets/destination/background-destination-tablet.jpg);
+		background-position: center center;
 	}
 }
 @media (min-width: 45em) {
@@ -505,8 +515,8 @@ select {
 }
 @media (min-width: 35em) {
 	.crew {
-		background-position: center center;
 		background-image: url(../public/assets/crew/background-crew-tablet.jpg);
+		background-position: center center;
 	}
 }
 @media (min-width: 45em) {
@@ -517,16 +527,16 @@ select {
 
 /* Technology */
 .technology {
-	background-position: center;
-	background-size: cover;
 	background: url(../public/assets/technology/background-technology-desktop.jpg);
+	background-position: bottom;
+	background-size: cover;
 }
-/* @media (min-width: 35em) {
+@media (min-width: 35em) {
 	.technology {
-		background-position: center center;
-		background-image: url(../public/assets/technology/background-technology-tablet.jpg);
+		background-position: center;
+		background-size: cover;
 	}
-} */
+}
 @media (min-width: 45em) {
 	.technology {
 		background-position: right;
@@ -547,7 +557,7 @@ select {
 }
 
 .grid-container p:not([class]) {
-	max-width: 50ch;
+	max-width: 52ch;
 	margin-inline: auto;
 	color: hsl(var(--clr-light));
 }
@@ -618,11 +628,11 @@ select {
 
 /* Technology Layout */
 .grid-container--technology {
+	--flow-space: 2rem;
 	grid-template-areas:
 		"title"
 		"image"
 		"content";
-	justify-content: start;
 }
 .grid-container--technology > img {
 	grid-area: image;
@@ -730,34 +740,42 @@ select {
 		flex-direction: column;
 	}
 	.grid-container--technology {
+		align-items: end;
+
 		grid-template-areas:
-			". title title . ."
-			". content content . image";
+			". title title . "
+			". content image .";
 		padding-right: 0;
 	}
 	.grid-container--technology > img {
-		max-width: 110%;
+		max-width: 80%;
 		align-self: center;
+		justify-self: flex-end;
 	}
 
-	.grid-container--technology > .technology-details {
+	.technology-details {
 		width: 100%;
 		align-self: center;
 		justify-self: start;
+		margin-top: 2rem;
+		margin-right: -15%;
 	}
 	.grid-container--technology-content {
 		grid-area: content;
 		flex-direction: row;
 		align-items: center;
 		align-self: center;
-		justify-content: start;
-		justify-self: start;
+		justify-content: center;
+		justify-self: center;
 		margin-top: 0;
+		width: 100%;
+		margin-left: 10%;
 	}
 	.grid-container--technology-content > .tab-list {
 		flex-direction: column;
-		justify-self: start;
-		margin-right: 3em;
+		justify-content: space-between;
+		justify-self: center;
+		margin-right: 1em;
 	}
 	.grid-container--technology-content > .tab-list > button {
 		padding: 0 1em;
