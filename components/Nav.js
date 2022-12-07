@@ -34,8 +34,7 @@ function Nav() {
 				className="mobile-nav-toggle"
 				aria-controls="primary-navigation"
 				style={{
-					backgroundImage:
-						toggleMenu && `url(../public/assets/shared/icon-close.svg)`,
+					backgroundImage: toggleMenu && `url(/assets/shared/icon-close.svg)`,
 				}}
 			>
 				<span className="sr-only" aria-expanded={toggleMenu}>
